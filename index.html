@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Color con RGB</title>
+    
+    <!-- Agregar enlaces a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        /* Estilos adicionales si los necesitas */
+        #colorDiv {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 0, 0); /* Color inicial rojo */
+            margin: 20px auto;
+        }
+
+        #controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Estilos para el footer */
+        #footer {
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Barra de navegación -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Mi Página</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="text-center mt-4">Cambiar Color con RGB</h1>
+
+        <div id="colorDiv" class="mx-auto my-4"></div>
+
+        <div id="controls" class="form-group">
+            <label for="red">Rojo:</label>
+            <input type="range" id="red" class="form-control-range" min="0" max="255" value="255">
+            <br>
+            <label for="green">Verde:</label>
+            <input type="range" id="green" class="form-control-range" min="0" max="255" value="0">
+            <br>
+            <label for="blue">Azul:</label>
+            <input type="range" id="blue" class="form-control-range" min="0" max="255" value="0">
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2023 Tu Nombre o Empresa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Agregar enlaces a Bootstrap JavaScript (jQuery y Popper.js) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Tu JavaScript personalizado aquí (sin cambios)
+        const redSlider = document.getElementById("red");
+        const greenSlider = document.getElementById("green");
+        const blueSlider = document.getElementById("blue");
+        const colorDiv = document.getElementById("colorDiv");
+
+        function actualizarColor() {
+            const redValue = redSlider.value;
+            const greenValue = greenSlider.value;
+            const blueValue = blueSlider.value;
+            colorDiv.style.backgroundColor = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+        }
+
+        redSlider.addEventListener("input", actualizarColor);
+        greenSlider.addEventListener("input", actualizarColor);
+        blueSlider.addEventListener("input", actualizarColor);
+    </script>
+</body>
+</html>
